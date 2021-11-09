@@ -7,13 +7,14 @@ export default class Home extends Component {
     super(props);
 
     this.state = {
-      content: ""
+      content: []
     };
   }
 
   componentDidMount() {
     UserService.getPublicContent().then(
       response => {
+        console.log(response.data);
         this.setState({
           content: response.data
         });
@@ -33,7 +34,13 @@ export default class Home extends Component {
     return (
       <div className="container">
         <header className="jumbotron">
-          <h3>{this.state.content}</h3>
+          <ul>
+            <li>Title - Descriptions</li>
+          {this.state.content.map(tut => (
+            <li>{tut.title}- {tut.description}</li>
+          ))}
+          {/* <h3>{this.state.content}</h3> */}
+          </ul>
         </header>
       </div>
     );

@@ -15,7 +15,7 @@ class Profile extends Component {
       <div className="container">
         <header className="jumbotron">
           <h3>
-            <strong>{currentUser.username}</strong> Profile
+            <strong>{currentUser.username}</strong> Welcome to logged in user page
           </h3>
         </header>
         <p>
